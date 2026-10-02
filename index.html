@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ITZFIZZ | Scroll-Driven Hero</title>
+    <meta
+      name="description"
+      content="Scroll-driven car hero animation built with HTML, CSS, JavaScript and GSAP."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700&family=Manrope:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <main>
+      <!-- ===== Hero (pinned + scrubbed by ScrollTrigger) ===== -->
+      <section class="hero" id="hero">
+        <div class="topbar">
+          <span class="brand">ITZFIZZ</span>
+          <span class="hud"><span id="hud-value">000</span> km/h</span>
+        </div>
+
+        <!-- Road -->
+        <div class="road" id="road">
+          <div class="lane"></div>
+          <div class="trail" id="trail"></div>
+
+          <h1 class="headline" aria-label="Welcome Itzfizz">
+            <span class="word" aria-hidden="true">
+              <span class="letter" data-letter data-lit="false">W</span>
+              <span class="letter" data-letter data-lit="false">E</span>
+              <span class="letter" data-letter data-lit="false">L</span>
+              <span class="letter" data-letter data-lit="false">C</span>
+              <span class="letter" data-letter data-lit="false">O</span>
+              <span class="letter" data-letter data-lit="false">M</span>
+              <span class="letter" data-letter data-lit="false">E</span>
+            </span>
+            <span class="word" aria-hidden="true">
+              <span class="letter" data-letter data-lit="false">I</span>
+              <span class="letter" data-letter data-lit="false">T</span>
+              <span class="letter" data-letter data-lit="false">Z</span>
+              <span class="letter" data-letter data-lit="false">F</span>
+              <span class="letter" data-letter data-lit="false">I</span>
+              <span class="letter" data-letter data-lit="false">Z</span>
+              <span class="letter" data-letter data-lit="false">Z</span>
+            </span>
+          </h1>
+
+          <!-- Car + headlight beam -->
+          <div class="car" id="car">
+            <img src="car.svg" alt="" draggable="false" />
+            <div class="beam"></div>
+          </div>
+        </div>
+
+        <!-- Stats (revealed at scroll-progress thresholds) -->
+        <div class="stats" id="stats">
+          <div class="card" data-card>
+            <div class="card-value"><span data-count="10">0</span>x</div>
+            <p class="card-text">Growth delivered for your business</p>
+          </div>
+          <div class="card" data-card>
+            <div class="card-value"><span data-count="10">0</span>+</div>
+            <p class="card-text">Years of digital marketing excellence</p>
+          </div>
+          <div class="card" data-card>
+            <div class="card-value"><span data-count="200">0</span>+</div>
+            <p class="card-text">Projects delivered across industries</p>
+          </div>
+          <div class="card" data-card>
+            <div class="card-value"><span data-count="5">0</span>+</div>
+            <p class="card-text">Core services: SEO, Web, SMM, Branding, UI/UX</p>
+          </div>
+        </div>
+
+        <div class="scroll-hint">
+          Scroll to drive <span class="nudge">&darr;</span>
+        </div>
+      </section>
+
+      <!-- ===== Spacer so the pinned section can unpin ===== -->
+      <section class="tail">
+        <h2>You made it across.</h2>
+      </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
